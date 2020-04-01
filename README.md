@@ -82,3 +82,10 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 [![emoji-log](https://cdn.rawgit.com/ahmadawais/stuff/ca97874/emoji-log/non-flat-round.svg)](https://github.com/ahmadawais/Emoji-Log/)
+
+## Connect
+
+<div align="left">
+    <p><a href="https://github.com/EhtashamAli"><img alt="GitHub @EhtashamAli" align="center" src="https://img.shields.io/badge/GITHUB-gray.svg?colorB=6cc644&colorA=6cc644&style=flat" /></a>&nbsp;<small><strong>(follow)</strong></small></p>
+    <p><a href="https://www.linkedin.com/in/ehtashamali786/"><img alt="LinkedIn @ehtashamali786" align="center" src="https://img.shields.io/badge/LINKEDIN-gray.svg?colorB=0077b5&colorA=0077b5&style=flat" /></a>&nbsp;<small><strong>(connect)</strong></small></p>
+</div>
