@@ -35,8 +35,6 @@ let extractRootDomain = url =>
             domain = splitArr[arrLen - 3] + "." + domain;
           }
         }
-        //change . to _
-        domain = domain.replace(".", "_");
         _resolve(domain);
       })
       .catch(error => _reject(error));
