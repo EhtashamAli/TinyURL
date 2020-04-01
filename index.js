@@ -1,7 +1,7 @@
 "use strict";
 let http = require("http");
 
-let extractHostname = url => {
+let extractHostname = url =>
   new Promise((_resolve, _reject) => {
     try {
       //find & remove protocol (http, ftp, etc.) and get hostname
@@ -16,8 +16,6 @@ let extractHostname = url => {
       _reject(error);
     }
   });
-};
-
 let extractRootDomain = url => {
   return new Promise((_resolve, _reject) => {
     try {
