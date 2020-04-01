@@ -11,7 +11,7 @@ Alnog with two Utill functions:
 extractHostname and extractRootDomain
 
 ### Installation
-[![NPM](https://nodei.co/npm/tinyurl.png?downloads=true&stars=true)](https://npmjs.com/package/@ehtashamali/tinyurl/)
+[![NPM](https://nodei.co/npm/@ehtashamali/tinyurl.png?mini=true)](https://npmjs.com/package/@ehtashamali/tinyurl/)
 
 Using npm:
 
