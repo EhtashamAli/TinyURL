@@ -1,6 +1,6 @@
 # Node.js Module for tinyUrl
 
-Built over tinyurl.com API: [TINYURL](http://tinyurl.com)
+Built over [TINYURL](http://tinyurl.com) API
 
 ## Getting Started
 
