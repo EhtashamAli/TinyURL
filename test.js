@@ -18,11 +18,11 @@ shorten("https://stackoverflow.com")
 
 extractHostname("https://stackoverflow.com")
   .then(result => {
-    console.log("Hostname:", result);
+    console.log("Hostname: ", result);
   })
   .catch(error => console.log(error.message));
 extractRootDomain("https://stackoverflow.com")
   .then(result => {
-    console.log("RootDomain(:", result);
+    console.log("RootDomain: ", result);
   })
   .catch(error => console.log(error.message));

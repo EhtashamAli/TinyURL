@@ -16,33 +16,31 @@ let extractHostname = url =>
       _reject(error);
     }
   });
-let extractRootDomain = url => {
-  return new Promise((_resolve, _reject) => {
-    try {
-      let domain = extractHostname(url),
-        splitArr = domain.split("."),
-        arrLen = splitArr.length;
-      //extracting the root domain here
-      //if there is a subdomain
-      if (arrLen > 2) {
-        domain = splitArr[arrLen - 2] + "." + splitArr[arrLen - 1];
-        //check to see if it's using a Country Code Top Level Domain (ccTLD) (i.e. ".me.uk")
-        if (
-          splitArr[arrLen - 2].length == 2 &&
-          splitArr[arrLen - 1].length == 2
-        ) {
-          //this is using a ccTLD
-          domain = splitArr[arrLen - 3] + "." + domain;
+let extractRootDomain = url =>
+  new Promise((_resolve, _reject) => {
+    extractHostname(url)
+      .then(domain => {
+        let splitArr = domain.split(".");
+        let arrLen = splitArr.length;
+        //extracting the root domain here
+        //if there is a subdomain
+        if (arrLen > 2) {
+          domain = splitArr[arrLen - 2] + "." + splitArr[arrLen - 1];
+          //check to see if it's using a Country Code Top Level Domain (ccTLD) (i.e. ".me.uk")
+          if (
+            splitArr[arrLen - 2].length == 2 &&
+            splitArr[arrLen - 1].length == 2
+          ) {
+            //this is using a ccTLD
+            domain = splitArr[arrLen - 3] + "." + domain;
+          }
         }
-      }
-      //change . to _
-      domain = domain.replace(".", "_");
-      _resolve(domain);
-    } catch (error) {
-      _reject(error);
-    }
+        //change . to _
+        domain = domain.replace(".", "_");
+        _resolve(domain);
+      })
+      .catch(error => _reject(error));
   });
-};
 
 module.exports = {
   shorten: async url =>
@@ -65,7 +63,7 @@ module.exports = {
           if (error) {
             // Consume response data to free up memory
             resp.resume();
-            _reject(error.message);
+            _reject(error);
           }
 
           let rawData = "";
