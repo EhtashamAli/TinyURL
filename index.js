@@ -1,6 +1,7 @@
+"use strict";
 let http = require("http");
 
-let extractHostname = url =>
+let extractHostname = url => {
   new Promise((_resolve, _reject) => {
     try {
       //find & remove protocol (http, ftp, etc.) and get hostname
@@ -15,6 +16,7 @@ let extractHostname = url =>
       _reject(error);
     }
   });
+};
 
 let extractRootDomain = url => {
   return new Promise((_resolve, _reject) => {
@@ -73,7 +75,18 @@ module.exports = {
           // The whole response has been received. resolve the result.
           resp.on("end", () => _resolve(rawData));
         })
-        .on("error", error => _reject(error.message))
+        .on("error", error => _reject(error))
+    ),
+  convert: async url =>
+    new Promise((_resolve, _reject) =>
+      http
+        .get(url, resp => {
+          if (resp.headers["location"]) _resolve(resp.headers["location"]);
+          else _reject(new Error("Invalid url"));
+        })
+        .on("error", error => {
+          _reject(error);
+        })
     ),
   extractRootDomain,
   extractHostname

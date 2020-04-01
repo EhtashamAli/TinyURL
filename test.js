@@ -1,5 +1,5 @@
-let { shorten } = require("./index");
+let { shorten, convert } = require("./index");
 
-shorten("http:")
+convert("https://tinyurl.com/y4c5dx")
   .then(res => console.log(res))
-  .catch(error => console.log(error));
+  .catch(error => console.log(error.message));
