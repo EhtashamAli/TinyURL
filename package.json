@@ -1,0 +1,27 @@
+{
+  "name": "tiny-url",
+  "version": "1.0.0",
+  "description": "URL shortner module using http://TinyURL.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EhtashamAli/TinyURL.git"
+  },
+  "keywords": [
+    "TinyURL",
+    "tinyurl",
+    "urlshortner",
+    "shortner",
+    "url",
+    "shorturl"
+  ],
+  "author": "Ehtasham Ali",
+  "license": "(MIT)",
+  "bugs": {
+    "url": "https://github.com/EhtashamAli/TinyURL/issues"
+  },
+  "homepage": "https://github.com/EhtashamAli/TinyURL#readme"
+}
