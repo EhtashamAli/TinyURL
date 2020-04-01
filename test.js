@@ -21,4 +21,8 @@ extractHostname("https://stackoverflow.com")
     console.log("Hostname:", result);
   })
   .catch(error => console.log(error.message));
-// extractRootDomain("https://stackoverflow.com");
+extractRootDomain("https://stackoverflow.com")
+  .then(result => {
+    console.log("RootDomain(:", result);
+  })
+  .catch(error => console.log(error.message));
