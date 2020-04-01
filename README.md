@@ -15,7 +15,7 @@ extractHostname and extractRootDomain
 Using npm:
 
 ```
-npm i tiny-url
+npm i @ehtashamali/tinyurl
 ```
 
 ### Example

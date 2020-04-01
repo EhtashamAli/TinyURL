@@ -1,7 +1,7 @@
 {
-  "name": "tiny-url",
+  "name": "@ehtashamali/tinyurl",
   "version": "1.0.0",
-  "description": "URL shortner module using http://TinyURL.com",
+  "description": "URL shortner module using http://tinyurl.com",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
