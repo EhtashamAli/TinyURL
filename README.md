@@ -10,9 +10,9 @@ Shorten and Convert
 Alnog with two Utill functions:
 extractHostname and extractRootDomain
 
-### Installing
+### Installation
 
-To include the module in your project
+Using npm:
 
 ```
 npm i tiny-url
