@@ -1,40 +1,48 @@
 let http = require("http");
-function extractHostname(url) {
-  var hostname;
-  //find & remove protocol (http, ftp, etc.) and get hostname
 
-  if (url.indexOf("//") > -1) {
-    hostname = url.split("/")[2];
-  } else {
-    hostname = url.split("/")[0];
-  }
-
-  //find & remove port number
-  hostname = hostname.split(":")[0];
-  //find & remove "?"
-  hostname = hostname.split("?")[0];
-
-  return hostname;
-}
-async function extractRootDomain(url) {
-  var domain = extractHostname(url),
-    splitArr = domain.split("."),
-    arrLen = splitArr.length;
-
-  //extracting the root domain here
-  //if there is a subdomain
-  if (arrLen > 2) {
-    domain = splitArr[arrLen - 2] + "." + splitArr[arrLen - 1];
-    //check to see if it's using a Country Code Top Level Domain (ccTLD) (i.e. ".me.uk")
-    if (splitArr[arrLen - 2].length == 2 && splitArr[arrLen - 1].length == 2) {
-      //this is using a ccTLD
-      domain = splitArr[arrLen - 3] + "." + domain;
+let extractHostname = url =>
+  new Promise((_resolve, _reject) => {
+    try {
+      //find & remove protocol (http, ftp, etc.) and get hostname
+      let hostname =
+        url.indexOf("//") > -1 ? url.split("/")[2] : url.split("/")[0];
+      //find & remove port number
+      hostname = hostname.split(":")[0];
+      //find & remove "?"
+      hostname = hostname.split("?")[0];
+      _resolve(hostname);
+    } catch (error) {
+      _reject(error);
     }
-  }
-  //change . to _
-  domain = domain.replace(".", "_");
-  return domain;
-}
+  });
+
+let extractRootDomain = url => {
+  return new Promise((_resolve, _reject) => {
+    try {
+      let domain = extractHostname(url),
+        splitArr = domain.split("."),
+        arrLen = splitArr.length;
+      //extracting the root domain here
+      //if there is a subdomain
+      if (arrLen > 2) {
+        domain = splitArr[arrLen - 2] + "." + splitArr[arrLen - 1];
+        //check to see if it's using a Country Code Top Level Domain (ccTLD) (i.e. ".me.uk")
+        if (
+          splitArr[arrLen - 2].length == 2 &&
+          splitArr[arrLen - 1].length == 2
+        ) {
+          //this is using a ccTLD
+          domain = splitArr[arrLen - 3] + "." + domain;
+        }
+      }
+      //change . to _
+      domain = domain.replace(".", "_");
+      _resolve(domain);
+    } catch (error) {
+      _reject(error);
+    }
+  });
+};
 
 module.exports = {
   shorten: async url =>
