@@ -1,6 +1,6 @@
-# TINYURL Link Shortener Node.js Module
+# Node.js Module for tinyUrl
 
-[http://tinyurl.com](http://tinyurl.com)
+Built over tinyurl.com API: [TINYURL](http://tinyurl.com)
 
 ## Getting Started
 
