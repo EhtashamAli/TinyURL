@@ -1,0 +1,10 @@
+ci/
+coverage/
+docs/
+spec/
+node_modules/
+_config.yml
+.gitignore
+pacakge-lock.json
+.circleci
+config.yml

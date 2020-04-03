@@ -1,16 +1,16 @@
 let {
   shorten,
   convert,
-  extractHostname,
-  extractRootDomain
+  extractRootDomain,
+  extractHostname
 } = require("./index");
 
-shorten("https://stackoverflow.com")
+shorten("https://facebook.com", "zxcdsaytr")
   .then(link => {
-    console.log("Short Url:", link);
+    console.log("withAlias:", link);
     convert(link)
       .then(result => {
-        console.log("Converted: ", result);
+        console.log("convert: ", result);
       })
       .catch(error => console.log(error.message));
   })
@@ -20,9 +20,9 @@ extractHostname("https://stackoverflow.com")
   .then(result => {
     console.log("Hostname: ", result);
   })
-  .catch(error => console.log(error.message));
+  .catch(error => console.log(error));
 extractRootDomain("https://stackoverflow.com")
   .then(result => {
     console.log("RootDomain: ", result);
   })
-  .catch(error => console.log(error.message));
+  .catch(error => console.log(error));
