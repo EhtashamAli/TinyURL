@@ -9,3 +9,4 @@ pacakge-lock.json
 .circleci
 config.yml
 .nyc_output
+.travis.yml
