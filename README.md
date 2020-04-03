@@ -1,5 +1,5 @@
 # Node.js Module for tinyUrl
-[![CircleCI](https://circleci.com/github/EhtashamAli/TinyURL.svg?style=svg)]
+
 Built over [TINYURL](http://tinyurl.com) API
 
 ## Getting Started
