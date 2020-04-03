@@ -1,5 +1,8 @@
 # Node.js Module for tinyUrl
 
+[![Coverage Status](https://coveralls.io/repos/github/EhtashamAli/TinyURL/badge.svg?branch=master)](https://coveralls.io/github/EhtashamAli/TinyURL?branch=master)
+
+[![Build Status](https://travis-ci.org/EhtashamAli/TinyURL.svg?branch=master)](https://travis-ci.org/EhtashamAli/TinyURL)
 Built over [TINYURL](http://tinyurl.com) API 
 
 ## Getting Started
