@@ -8,3 +8,4 @@ _config.yml
 pacakge-lock.json
 .circleci
 config.yml
+.nyc_output

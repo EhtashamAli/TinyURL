@@ -46,16 +46,16 @@ module.exports = {
     });
   },
   convert: async url => {
-    new Promise((_resolve, _reject) =>
-      http
-        .get(url, resp => {
+    return new Promise((_resolve, _reject) => {
+      try {
+        http.get(encodeURI(url), resp => {
           if (resp.headers["location"]) _resolve(resp.headers["location"]);
           else _reject(new Error("Invalid url"));
-        })
-        .on("error", error => {
-          _reject(error);
-        })
-    );
+        });
+      } catch (error) {
+        _reject(error);
+      }
+    });
   },
   extractRootDomain,
   extractHostname

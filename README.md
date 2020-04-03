@@ -11,6 +11,7 @@ Alnog with two Utill functions:
 extractHostname and extractRootDomain
 
 ### Installation
+
 [![NPM](https://nodei.co/npm/@ehtashamali/tinyurl.png?mini=true)](https://npmjs.com/package/@ehtashamali/tinyurl/)
 
 Using npm:
@@ -28,10 +29,18 @@ let {
   extractHostname,
   extractRootDomain
 } = require("tiny-url");
-
+//Without Alias
 shorten("https://stackoverflow.com")
   .then(link => {
     //returns shorten url ex: tinyurl.com/adwa222
+    console.log("Short Url:", link);
+  })
+  .catch(error => console.log(error.message));
+
+//With Alias
+shorten("https://stackoverflow.com", "MyTestAlias")
+  .then(link => {
+    //returns shorten url ex: tinyurl.com/MyTestAlias
     console.log("Short Url:", link);
   })
   .catch(error => console.log(error.message));
@@ -64,17 +73,17 @@ extractRootDomain("https://stackoverflow.com")
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md] under docs for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
-I use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+I use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/EhtashamAli/TinyURL/tags).
 
 ## Author
 
 - **Ehtasham Ali**
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/EhtashamAli/TinyURL/contributors) who participated in this project.
 
 ## License
 

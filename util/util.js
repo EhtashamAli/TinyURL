@@ -1,6 +1,9 @@
 let extractHostname = url => {
   return new Promise((_resolve, _reject) => {
     try {
+      if (!url && url.length === 0) {
+        throw new Error("The url can not be an empty string.");
+      }
       //find & remove protocol (http, ftp, etc.) and get hostname
       let hostname =
         url.indexOf("//") > -1 ? url.split("/")[2] : url.split("/")[0];
