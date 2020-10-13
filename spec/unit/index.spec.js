@@ -6,7 +6,7 @@ describe("Index tests ", function() {
 
   it("should return url", async function() {
     _url = "https://facebook.com";
-    _alias = "asdasdasda";
+    _alias = "asdasdasda" + Math.floor(Math.random() + 10000000000000000);
     var result = await shorten(_url, _alias);
     result.should.be.type("string");
   });
@@ -30,7 +30,7 @@ describe("Index tests ", function() {
   });
   it("should throw error", async function() {
     _url = "https://tinyurl.com/ycnasdalu";
-    convert(_url).catch(error => {
+    return convert(_url).catch(error => {
       error.message.should.equal(
         `Protocol "https:" not supported. Expected "http:"`
       );
@@ -39,8 +39,8 @@ describe("Index tests ", function() {
 
   it("should throw error", async function() {
     _url = "";
-    convert(_url).catch(error => {
-      error.message.should.equal(`Unable to determine the domain name`);
+    return convert(_url).catch(error => {
+      error.message.should.be.type('string');
     });
   });
 });

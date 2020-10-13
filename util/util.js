@@ -28,7 +28,7 @@ module.exports = {
   },
   parseResponse: res => {
     return res
-      .match(/<b>(http\:\/\/tinyurl\.com\/\S+)<\/b>/)[0]
+      .match(/<b>(http[s]?\:\/\/tinyurl\.com\/\S+)<\/b>/)[0]
       .replace("<b>", "")
       .replace("</b>", "");
   },
